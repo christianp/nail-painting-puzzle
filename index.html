@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <style type="text/css">
+            html, input {
+              font-family: monospace;
+                font-size: 16px;
+            }
+            #things {
+              list-style: none;
+              padding: 0;
+            }
+            .bin,.thing .number {
+              display: inline-block;
+              width: 2rem;
+              height: 1.9rem;
+              background: #eee;
+              margin: 0.1rem;
+              vertical-align: middle;
+              text-align: center;
+              font-size: 1.5rem;
+            }
+            .bin {
+                border-radius: 10% 10% 50% 50%;
+            }
+            .bin.on {
+              background: #a00;
+            }
+            .bin.remove::before {
+                content: '!';
+                color: red;
+                font-weight: bold;
+            }
+            .thing .number {
+              line-height: 1em;
+              text-align: right;
+              background: white;
+            }
+            .score {
+              font-size: 2em;
+              display:inline-block;
+              list-style: none;
+              padding: 0;
+              text-align: right;
+              margin: 1em 0 0 0;
+            }
+            #best-removes {
+                color: red;
+                cursor: pointer;
+            }
+            #sequence {
+                width: 100%;
+            }
+            label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 0.5em;
+            }
+
+        </style>
+        <script src="Sortable.min.js"></script>
+    </head>
+    <body>
+        <div class="controls">
+            <label>
+                Fingers
+                <input type="range" id="num_fingers" min="1" max="8" step="1">
+            </label>
+            <label>
+                Sequence
+                <input type="text" id="sequence">
+            </label>
+        </div>
+        <ul class="score">
+            <li id="removes">Removals: <span class="number"></span></li>
+            <li id="best-removes">Best: <span class="number"></span></li>
+        </ul>
+        <ul id="things">
+        </ul>
+
+        <script src="thing.js"></script>
+    </body>
+</html>
