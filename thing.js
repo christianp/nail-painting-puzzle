@@ -93,6 +93,10 @@ Interactive.prototype = {
             document.querySelector('#best-removes .number').textContent = r;
         }
         document.getElementById('sequence').value = seq;
+        var top_bins = document.querySelectorAll('#things li:first-child .bin');
+        for(var i=0;i<top_bins.length;i++) {
+            top_bins[i].classList.remove('remove');
+        }
         for(var i=1;i<d.list.length;i++) {
             var bins = document.querySelectorAll('#things li')[i];
             for(var j=0;j<this.fingers;j++) {
