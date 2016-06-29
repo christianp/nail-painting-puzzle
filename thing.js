@@ -92,7 +92,7 @@ Interactive.prototype = {
             d.best_seq = d.list.map(function(t){return t.n});
             document.querySelector('#best-removes .number').textContent = r;
         }
-        document.getElementById('sequence').value = seq;
+//        document.getElementById('sequence').value = seq;
         var top_bins = document.querySelectorAll('#things li:first-child .bin');
         for(var i=0;i<top_bins.length;i++) {
             top_bins[i].classList.remove('remove');
@@ -122,6 +122,7 @@ function valid_sequence(seq) {
     return set.every(function(v,i){return v==i});
 }
 
+/*
 document.getElementById('sequence').addEventListener('change',function() {
     var seq = document.getElementById('sequence').value.split(',').map(function(v){return parseInt(v)});
     if(!valid_sequence(seq)) {
@@ -135,6 +136,7 @@ document.getElementById('sequence').addEventListener('change',function() {
     }
     interactive.make_things(p,seq);
 });
+*/
 document.getElementById('num_fingers').addEventListener('input',function() {
     interactive.make_things(document.getElementById('num_fingers').value);
     document.querySelector('#best-removes .number').textContent = interactive.data[interactive.fingers].best;
